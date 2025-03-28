@@ -1,0 +1,16 @@
+# graph 名称
+name: "Agent1Service"
+
+# graph 详细描述
+description: "智能体网络示例"
+
+# 为了完成任务的计划，通过调用 group 完成任务
+groups:
+  - Agent1Group
+
+# 任务执行过程中的上下文信息（如返回值等），用于 group 之间的信息传递
+context:
+  - name: "task"
+    type: "str"
+  - name: "result"
+    type: "str"

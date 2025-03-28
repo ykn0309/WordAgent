@@ -1,0 +1,24 @@
+#default_model: deepseek-chat
+#default_model: gpt-3.5-turbo
+default_model: qwen2.5-32b-instruct
+#default_model: qwq-plus
+
+openai:
+  "api_key": "sk-uz2K0lhafPFynE77BBX5v0adDXDzxJWir05jrlPCPQoMslp9"
+  "base_url": "https://api.chatanywhere.tech/v1"
+  "default_model": "gpt-3.5-turbo"
+
+qwen:
+  "api_key": "sk-cf690968fd414e058f7cb0d2d3273c22"
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  "default_model": "qwen2.5-32b-instruct"
+
+#qwen:
+#  "api_key": "sk-cf690968fd414e058f7cb0d2d3273c22"
+#  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1"
+#  "default_model": "qwq-plus"
+
+deepseek:
+  api_key: sk-ca3583e3026949299186dcbf3fc34f8c
+  base_url: https://api.deepseek.com
+  default_model: deepseek-chat

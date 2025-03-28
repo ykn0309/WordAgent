@@ -1,0 +1,16 @@
+{
+  "id":"Agent1",
+  "name":"Agent1",
+  "title":"万能智能体",
+  "description":"万能智能体",
+  "keywords": ["万能智能体"],
+  "manual":"123",
+  "prompt": "根据用户需求得出结果",
+  "model": "gpt-3.5-turbo",
+  "params":[
+    { "title":"task", "name":"task", "type":"string", "notnull":true, "description": "任务", "defaultValue":"" }
+  ],
+  "results":[
+    { "title":"result", "name":"result", "type":"string", "notnull":true, "description":"结果", "defaultValue":"" }
+  ]
+}
