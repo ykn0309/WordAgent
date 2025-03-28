@@ -66,7 +66,7 @@ def service_summary():
 
 
 def run_web(debug=False):
-    app.run(host='0.0.0.0', port=18080, debug=debug)
+    app.run(host='0.0.0.0', port=10098, debug=debug)
 
 
 if __name__ == '__main__':
