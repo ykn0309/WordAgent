@@ -1,0 +1,10 @@
+{
+  "group": "WordAgentGroup",
+  "links": [
+    {
+      "source": "start",
+      "target": "WordAgentGroup/docx_read_agent",
+      "type": "hard"
+    }
+  ]
+}

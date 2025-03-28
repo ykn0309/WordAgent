@@ -1,37 +1,25 @@
 from agent_network.base import BaseAgent
-import agent_network.utils.storage.oss as oss
+from agent_network.exceptions import ReportError
 import requests
 
-
-class Agent1(BaseAgent):
+class docx_read_agent(BaseAgent):
     def __init__(self, graph, config, logger):
         super().__init__(graph, config, logger)
 
-    def forward(self, message, **kwargs):
-        messages = []
-        self.add_message("user", f"task: {kwargs['task']}", messages)
-        response = self.chat_llm(messages)
-        print('response: ' + response.content)
-        results = {
-            "result": response.content,
+    def forward(self, messages, **kwargs):
+        file_url = kwargs.get("file_url")
+        if not file_url:
+            raise ReportError("file_url is not provided")
+        
+        import io
+        from docx import Document
+        response = requests.get(file_url)
+        docx_file = io.BytesIO(response.content)
+        docx = Document(docx_file)
+        docx_read_result = "\n".join(para.text for para in docx.paragraphs)
+        self.log("assistant", docx_read_result)
+
+        result = {
+            "docx_read_result": docx_read_result
         }
-        return results
-
-
-class Agent2(BaseAgent):
-    def __init__(self, graph, config, logger):
-        super().__init__(graph, config, logger)
-
-    def forward(self, message, **kwargs):
-        # messages = []
-        # self.add_message("user", f"task: {kwargs['task']}", messages)
-        url = kwargs['url']
-        oss.upload_file(url, requests.get(url).content)
-        content = oss.download_file(url)
-        # response = self.chat_llm(messages)
-        print('file content: ' + content)
-        results = {
-            "content": content,
-            "result": "成功下载文件"
-        }
-        return results
+        return result

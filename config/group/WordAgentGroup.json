@@ -1,0 +1,19 @@
+{
+  "id":"WordAgentGroup",
+  "name":"WordAgentGroup",
+  "type":"agent",
+  "title":"Word智能体组",
+  "description":"Word智能体组，用于处理Word文档",
+  "prompt": "",
+  "keywords": ["Word", "docx", "文本提取"],
+  "reference":"http://xxx/Scheduling/机器ID",
+  "manual":"Word智能体组",
+  "agents": ["docx_read_agent"],
+  "params":[
+    { "title":"task", "name":"task", "type":"string", "notnull":true, "description": "任务", "defaultValue":"" },
+    { "title":"file_url", "name":"file_url", "type":"string", "notnull":true, "description": "OSS URL", "defaultValue":"" }
+  ],
+  "results":[
+    { "title":"result", "name":"result", "type":"string", "notnull":true, "description":"结果", "defaultValue":"" }
+  ]
+}

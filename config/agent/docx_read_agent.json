@@ -1,0 +1,17 @@
+{
+  "id":"docx_read_agent",
+  "name":"docx_read_agent",
+  "title":"docx格式文档读取智能体",
+  "description":"docx格式文档读取智能体，用于提取docx格式文件中的文本",
+  "keywords": ["Word", "docx", "文本提取"],
+  "manual":"123",
+  "prompt": " \"### 角色 ###\n  你是一位出色的助手，擅长完成他人分配给你的任务。      \n  ### 目标 ###\n  你需要理解任务需求和当前任务完成状态，进行下一步行动。\n  \n  ### 工作流 ###\n  你需要按照如下步骤进行工作：\n  \n  1. 理解任务需求和当前任务进行状态，并在计算出任务结果之后，返回 result 字段。\n  ### 返回方式 ###\n  请以 JSON 格式返回，包含以下字段：\n\n  think: 你的思考过程。\n  result: 任务结果，如果任务还未完成，则不需要返回该字段。\n",
+  "model": "qwen2.5-32b-instruct",
+  "params":[
+    { "title":"task", "name":"task", "type":"string", "notnull":true, "description": "任务", "defaultValue":"" },
+    { "title":"file_url", "name":"file_url", "type":"string", "notnull":true, "description": "OSS URL", "defaultValue":"" }
+  ],
+  "results":[
+    { "title":"result", "name":"result", "type":"string", "notnull":true, "description":"结果", "defaultValue":"" }
+  ]
+}

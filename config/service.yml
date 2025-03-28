@@ -1,11 +1,11 @@
 # 服务组对应我们的graph，同一个graph的所有分布式智能体服务注册到注册中心上的同一个组，实现服务注册与发现
 "service_group": "agent-network"
 # 服务名是智能体功能的集合，包含当前智能体服务的所有节点，暴露为同一个微服务入口
-"service_name": "Agent1Group"
+"service_name": "WordAgentGroup"
 "access_key": ""
 "secret_key": ""
 "center_addr": "http://120.27.248.186:8848"
 #"center_type": "nacos"
 "ip": "120.27.248.186"
-"port": "18080"
+"port": "10098"
 "enabled": true
